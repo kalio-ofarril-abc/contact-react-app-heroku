@@ -21,26 +21,29 @@ const ContactList = (props) => {
     }
 
     return (
-        <div className="main" style = {{marginTop: "50px"}}>
-            <h2>Contact List
-                <Link to="/add">
-                    <button className="ui button blue right">Add Contact</button>
-                </Link>
-            </h2>
-            <div className="ui search">
-                <div className="ui icon input">
-                    <input 
-                        ref = {inputElement}
-                        type="text" 
-                        placeholder="Search Contact..." 
-                        className="prompt" 
-                        value={props.term} 
-                        onChange={getSearchTerm}
-                    />
-                    <i className="search icon"></i>
-                </div>
+        <div className="cont mainContactList">
+            <div className="storyList"> 
+                <h2>Contact List
+                    {/* <Link to="/add">
+                        <button className="ui button blue right">Add Contact</button>
+                    </Link> */}
+                </h2>
+                <span className="ui center search">
+                    <span className="ui icon input">
+                        <input 
+                            ref = {inputElement}
+                            type="text" 
+                            placeholder="Search Contact..." 
+                            className="prompt" 
+                            value={props.term} 
+                            onChange={getSearchTerm}
+                        />
+                        <i className="search icon"></i>
+                    </span>
+                </span>
             </div>
-            <div className="ui celled list">
+            
+            <div className="ui celled list contacts">
                 {renderContactList.length > 0 ? renderContactList : "No Contacts Available"}
             </div>
         </div>

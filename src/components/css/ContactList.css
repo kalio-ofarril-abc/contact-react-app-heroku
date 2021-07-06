@@ -1,0 +1,18 @@
+.mainContactList{
+    flex-direction: column;
+    width: 30% !important;
+    overflow-y: auto;
+    height: 100%;
+    margin-right: 1%;
+}
+
+.contacts{
+    overflow-y: auto;
+    width: 98%;
+    left: 15%;
+}
+
+.storyList{
+    display: flex;
+    flex-direction: row;
+}

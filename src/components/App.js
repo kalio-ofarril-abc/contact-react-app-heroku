@@ -2,14 +2,18 @@ import React, {useState, useEffect} from "react";
 import {BrowserRouter as Router, Switch, Route}  from "react-router-dom";
 import {v4 as uuidv4} from "uuid";
 import api from "../api/contact";
-import './App.css';
+
 import Header from "./Header";
 import AddContact from "./AddContact";
 import ContactList from "./ContactList";
 import ContactDetails from "./ContactDetails";
 import ContactDelete from "./ContactDelete";
 import EditContact from "./EditContact";
-import contact from "../api/contact";
+import StoryViewer from "./StoryViewer";
+
+import "./css/App.css";
+import "./css/ContactList.css";
+import "./css/StoryViewer.css";
 
 function App() {
 
@@ -87,7 +91,7 @@ function App() {
   }, [contacts]);
 
   return (
-    <div className="ui container">
+    <div className="ui mainBackground">
       <Router>
 
         <Header/>
@@ -112,12 +116,16 @@ function App() {
             path="/" 
             exact 
             render = { (props) => (
+              <div className="main">
               <ContactList 
                 {...props} 
                 contacts={searchTerm.length < 1 ? contacts : searchResults} 
                 term={searchTerm}
                 searchKeyword={searchHandler}
               />
+
+              <StoryViewer/>
+              </div>
             )}
           />
 
