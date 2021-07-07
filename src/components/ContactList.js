@@ -1,7 +1,8 @@
 import React, {useRef} from "react";
 import {Link} from "react-router-dom";
 import ContactCard from "./ContactCard";
-
+import {BsFillPlusCircleFill} from "react-icons/bs";
+ 
 const ContactList = (props) => {
 
     const inputElement = useRef("");
@@ -23,11 +24,7 @@ const ContactList = (props) => {
     return (
         <div className="cont mainContactList">
             <div className="storyList"> 
-                <h2>Contact List
-                    {/* <Link to="/add">
-                        <button className="ui button blue right">Add Contact</button>
-                    </Link> */}
-                </h2>
+                <h2>Contact List</h2>
                 <span className="ui center search">
                     <span className="ui icon input">
                         <input 
@@ -45,6 +42,12 @@ const ContactList = (props) => {
             
             <div className="ui celled list contacts">
                 {renderContactList.length > 0 ? renderContactList : "No Contacts Available"}
+            </div>
+
+            <div>
+                <Link to="/add">
+                    <BsFillPlusCircleFill size='45px'/>
+                </Link>
             </div>
         </div>
     );
