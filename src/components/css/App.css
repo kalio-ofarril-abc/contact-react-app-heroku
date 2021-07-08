@@ -48,12 +48,8 @@
 }
 
 .cont{
-  background: #3D5A80 !important;
-  width: 98%;
-  left: 1%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  background: #272727 !important;
+  width: 100%;
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -64,7 +60,7 @@
 }
 
 .main{
-  height: 85%;
+  height: 100%;
   display: flex;
   flex-direction: row;
 }

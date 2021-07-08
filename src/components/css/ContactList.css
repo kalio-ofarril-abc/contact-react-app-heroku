@@ -3,15 +3,16 @@
     width: 30% !important;
     overflow-y: auto;
     height: 100%;
-    margin-right: 1%;
+    border-right-style: solid;
+    border-color: #90A9B7;
 }
 
 .contacts{
     overflow-y: auto;
-    width: 98%;
+    width: 100%;
     left: 15%;
     height: 80%;
-    background: gray;
+    background: #D4AA7D;
 }
 
 .storyList{

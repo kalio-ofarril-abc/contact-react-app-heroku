@@ -28,6 +28,11 @@ function App() {
     return response.data;
   }
 
+  const displayStory = (storyId) => {
+    console.log(storyId)
+    console.log("Story displayed")
+  }
+
   const addContactHandler = async (contact) => {
     const request = {
       id: uuidv4(),
@@ -94,8 +99,6 @@ function App() {
     <div className="ui mainBackground">
       <Router>
 
-        <Header/>
-
         <Switch>
 
           <Route 
@@ -117,14 +120,15 @@ function App() {
             exact 
             render = { (props) => (
               <div className="main">
-              <ContactList 
-                {...props} 
-                contacts={searchTerm.length < 1 ? contacts : searchResults} 
-                term={searchTerm}
-                searchKeyword={searchHandler}
-              />
+                <ContactList 
+                  {...props} 
+                  contacts={searchTerm.length < 1 ? contacts : searchResults} 
+                  term={searchTerm}
+                  searchKeyword={searchHandler}
+                  displayStory={displayStory}
+                />
 
-              <StoryViewer/>
+                <StoryViewer/>
               </div>
             )}
           />

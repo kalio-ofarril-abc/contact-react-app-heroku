@@ -7,9 +7,14 @@ const ContactList = (props) => {
 
     const inputElement = useRef("");
 
+    const clickHandler = (id) => {
+        props.displayStory(id);
+    }
+
     const renderContactList = props.contacts.map((contact) => {
         return (
             <ContactCard 
+                clickHandler = {clickHandler}
                 contact={contact} 
                 key={contact.id} 
             >
