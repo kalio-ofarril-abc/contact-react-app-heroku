@@ -8,7 +8,7 @@ const ContactCard = (props) => {
 
     return(
         <div className="item story" 
-            onClick = { () => props.clickHandler(id)} >
+            onClick = { () => props.clickHandler(props.contact)} >
             <img className="ui avatar image" src={user} alt="user"/>
             <div className="content">
                 <Link to={{pathname:`/contact/${id}`, state:{contact: props.contact}}}>

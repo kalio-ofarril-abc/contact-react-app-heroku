@@ -21,6 +21,7 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [storyView, setStoryView] = useState({})
 
   //Retrieve Contacts
   const retrieveContacts = async () =>{
@@ -28,9 +29,9 @@ function App() {
     return response.data;
   }
 
-  const displayStory = (storyId) => {
-    console.log(storyId)
-    console.log("Story displayed")
+  const displayStory = (storyData) => {
+    console.log(storyData);
+    setStoryView(storyData);
   }
 
   const addContactHandler = async (contact) => {
@@ -128,7 +129,12 @@ function App() {
                   displayStory={displayStory}
                 />
 
-                <StoryViewer/>
+                <div className="main-right">
+                  <Header/>
+                  <StoryViewer
+                    story={storyView}
+                  />
+                </div>
               </div>
             )}
           />

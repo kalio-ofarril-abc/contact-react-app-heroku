@@ -1,6 +1,6 @@
 .storyViewer{
     flex-direction: column;
-    width: 70% !important;
+    width: 100% !important;
     overflow-y: auto;
     height: 100%;
 }
