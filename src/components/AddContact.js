@@ -1,11 +1,13 @@
 import React from "react";
 
+
 class AddContact extends React.Component {
 
     state = {
         name: "",
         email: ""
     };
+
 
     add = (event) => {
         event.preventDefault();
@@ -17,12 +19,15 @@ class AddContact extends React.Component {
         this.setState({name:"",email:""});
         this.props.history.push("/");
     }
+    
 
     render() {
         return(
             <div className="ui main">
                 <h2>Add Contact</h2>
-                <form className="ui form" onSubmit={this.add}>
+                <button className="ui button blue" onClick={this.add}>Add</button>
+                {/* <form className="ui form" onSubmit={this.add}> */}
+                <form className="ui form">
                     <div className="field">
                         <label>Name</label>
                         <input 
@@ -41,7 +46,7 @@ class AddContact extends React.Component {
                             value = {this.state.email}
                             onChange={ (event) => this.setState({email: event.target.value})}/>
                     </div>
-                    <button className="ui button blue">Add</button>
+                    
                 </form>
             </div>
         );

@@ -25,7 +25,8 @@ function App() {
 
   //Retrieve Contacts
   const retrieveContacts = async () =>{
-    const response = await api.get("/contacts")
+    const response = await api.get("/")
+    console.log(response);
     return response.data;
   }
 
@@ -123,10 +124,11 @@ function App() {
               <div className="main">
                 <ContactList 
                   {...props} 
-                  contacts={searchTerm.length < 1 ? contacts : searchResults} 
-                  term={searchTerm}
-                  searchKeyword={searchHandler}
-                  displayStory={displayStory}
+                  contacts = {searchTerm.length < 1 ? contacts : searchResults} 
+                  term = {searchTerm}
+                  searchKeyword = {searchHandler}
+                  displayStory = {displayStory}
+                  retrieveContacts = {retrieveContacts}
                 />
 
                 <div className="main-right">
